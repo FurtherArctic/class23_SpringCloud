@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.dao.ProductDao">
+    <sql id="Base_Column_list">
+        id,product_name,price,stock
+    </sql>
+    <select id="getById" resultType="com.powernode.entity.Product">
+        select
+        <include refid="Base_Column_list"/>
+        from t_product where id=#{id}
+    </select>
+</mapper>
